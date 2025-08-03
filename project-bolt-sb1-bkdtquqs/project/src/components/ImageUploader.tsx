@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Upload, Image as ImageIcon, X } from 'lucide-react';
+import { Upload, X } from 'lucide-react';
 import { validateImage } from '../utils/imageUtils';
 
 interface ImageUploaderProps {
@@ -72,7 +72,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageSelected, classNam
         setError(validationResult.error);
         setUploading(false);
       }
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred. Please try again.');
       setUploading(false);
     }
